@@ -1329,7 +1329,7 @@
 
     // attrs = class + attrs
     (cls = _.map(str.match(/\.(\{\{\{.*?\}\}\}|\{\{.*?\}\}|[\w\-]+)/g), function(v) { return v.slice(1); }).join(' '))
-    && attrs == (attrs = attrs.replace(/class\s*=\s*((\").*?\"|(\{.*?\}|\S)+)/,
+    && attrs == (attrs = attrs.replace(/class\s*=\s*((").*?"|(\{.*?\}|\S)+)/,
       function(match, tmp, q) { return ' class=' + '"' + cls + ' ' + (q ? tmp.slice(1, -1) : tmp) + '"'; }))
     && (attrs = ' class="' + cls + '"' + attrs);
 
